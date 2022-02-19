@@ -1,12 +1,12 @@
-FROM python:3.9.1
+FROM python:3.9.1-alpine
 
-WORKDIR /code
+WORKDIR /usr/src/app
 
-COPY ./requirements.txt /code/requirements.txt
+COPY ./requirements/dev.txt ./
 
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN python3 -m ensurepip && \
+    pip install -r dev.txt
 
-COPY ./app /code/app
+ENV PYTHONPATH "${PYTHONPATH}:/usr/src/app/src"
 
-CMD ["uvicorn", "app.app:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "src.app:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
