@@ -1,5 +1,10 @@
 # FastApi - Serverless
 
+## Image
+
+![AWS_ecs-Lambda-api-Gate](img/AWS_S3-Python-ecs-Lambda-api-Gate.png)
+
+
 ## Reference
 * https://fastapi.tiangolo.com/deployment/docker/
 * https://mangum.io/
