@@ -1,0 +1,15 @@
+service: lambda-fastapi
+useDotenv: true
+
+provider:
+  name: aws
+  stage: dev
+  region: ${env:REGION}
+  memorySize: 256
+  timeout: 30
+  apiName: ${self:service}-dev
+  apiGateway:
+    description: REST API ${self:service}
+    metrics: true
+
+functions: ${file(functions.yml):functions}
