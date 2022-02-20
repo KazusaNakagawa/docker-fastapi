@@ -2,7 +2,7 @@
 
 ## Image
 
-<img src="img/AWS_S3-Python-ecs-Lambda-api-Gate.png" width="400">
+<img src="img/AWS_S3-Python-ecs-Lambda-api-Gate.png" width="800">
 
 ## premise
 * AWS IMA Account
