@@ -1,0 +1,19 @@
+functions:
+  fastApiFunc:
+    image: ${env:ECR_IMAGE}@${env:ECR_DIGEST}
+    events:
+      - http:
+          integration: lambda-proxy
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          integration: lambda-proxy
+          path: /{proxy+}
+          method: ANY
+          cors: true
+      - http:
+          integration: lambda-proxy
+          path: /items/{item_id}
+          method: ANY
+          cors: true

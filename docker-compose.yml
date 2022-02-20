@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  lambda-fastapi-prod:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./compose/prod/Dockerfile
+    image: "${ECR_IMAGE}"
+    container_name: lambda-fastapi-prod
+    ports:
+      - "9000:8080"
+    tty: true
+    stdin_open: true
+
+  lambda-fastapi-dev:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: ./compose/dev/Dockerfile
+    image: lambda-fastapi-dev:latest
+    container_name: lambda-fastapi-dev
+    volumes:
+      - ./src:/usr/src/app/src
+    ports:
+      - "8000:8000"
