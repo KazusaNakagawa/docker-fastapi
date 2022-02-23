@@ -26,7 +26,25 @@
     $ curl https://xxxxx.execute-api.ap-northeast-1.amazonaws.com/dev/
     {"Hello":"World root !!!!!!!"}%
     ```
-   
+
+## Run local FastApi
+```bash
+# syntax
+docker-compose up -d <docker image name>
+
+# ex
+docker-compose up -d lambda-fastapi-dev
+
+# No detach
+docker-compose up lambda-fastapi-dev
+```
+
+## Run pytest
+
+```
+python -m pytest
+```
+
 ## Reference
 * https://fastapi.tiangolo.com/deployment/docker/
 * https://mangum.io/
@@ -34,3 +52,4 @@
 * https://www.serverless.com/framework/docs/environment-variables/
 * https://dev.classmethod.jp/articles/easy-deploy-of-lambda-with-serverless-framework/
 * https://zenn.dev/mini_hiori/articles/mangum-serverless
+* https://docs.pytest.org/en/latest/how-to/usage.html#other-ways-of-calling-pytest
